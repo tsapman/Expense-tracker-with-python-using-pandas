@@ -10,7 +10,8 @@ def create():
         with open("expenses.csv","w") as file:
             pass
 
-create()
+
+
 
 
 
