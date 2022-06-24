@@ -1,13 +1,12 @@
 from datetime import date
 
 
-today=date.today()
+def Daytoday():
+    today = date.today()
+    day = today.strftime("%d/%m/%Y")
 
-day=today.strftime("%d/%m/%Y")
+    return day
 
-print("type of date---->  ",type(day))
-
-print(day)
 
 
 
