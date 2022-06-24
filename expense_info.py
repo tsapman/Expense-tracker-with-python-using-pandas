@@ -15,11 +15,5 @@ def info_amount():
     return s
 
 
-def info_dataframe(d,r,a):
-    d=pd.DataFrame({"Day":[d],
-                    "Reason/Concept":[r],
-                    "Amount":[a]
-    })
 
-    d.to_csv("expenses.csv",mode="a",index=False,header=False)
 
