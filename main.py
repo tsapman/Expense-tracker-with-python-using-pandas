@@ -7,6 +7,7 @@ from choose import choice
 
 
 def main():
+    create()
     x=choice()
     x=int(x)
 
