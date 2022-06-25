@@ -30,3 +30,21 @@ def info_dataframe(d,r,a,p):
         d.to_csv(p, mode="a", index=False, header=True)
 
 
+class User(object):
+    def __int__(self,name,password):
+        self.name = name
+        self.password = password
+
+    def user_name(self):
+        return self.name
+    def user_password(self):
+        return self.password
+
+def total_expenses(profile):
+    file_exists=os.path.exists(profile)
+    if file_exists:
+        df=pd.read_csv(profile)
+        df.at["Total" , "Amount"]=df["Amount"].sum()
+        print(df)
+    else:
+        print("Total= 0")
