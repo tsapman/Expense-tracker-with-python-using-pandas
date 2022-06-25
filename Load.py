@@ -63,5 +63,12 @@ def create_profile(name,password):
 
     else:
         create("users.csv")
-        d.to_csv("users.csv",mode="a",index=False,header= False)
+        d.to_csv("users.csv",mode="a",index=False,header= True)
 
+
+def check_user():
+    d=pd.read_csv("users.csv")
+    d_list=d.values.tolist()
+    print("\nusers")
+    print(d_list)
+    print("\n")

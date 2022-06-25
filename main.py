@@ -11,6 +11,7 @@ from Load import info_dataframe
 from Load import User
 from Load import total_expenses
 from Load import create_profile
+from Load import check_user
 
 
 def main():
@@ -34,6 +35,7 @@ def main():
         user = User()
         user.name = name
         user.password = password
+        check_user()
         print("\nWelcome to the Expenses tracker : ", user.name, )
     while 1:
         x = choice()
