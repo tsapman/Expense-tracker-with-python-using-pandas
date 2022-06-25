@@ -46,5 +46,22 @@ def total_expenses(profile):
         df=pd.read_csv(profile)
         df.at["Total" , "Amount"]=df["Amount"].sum()
         print(df)
+        print("\n")
     else:
-        print("Total= 0")
+        print("Total= 0\n")
+
+
+def create_profile(name,password):
+    d=pd.DataFrame({"Username":[name],
+                    "Password":[password]
+    })
+
+    file_exists=os.path.exists("users.csv")
+
+    if file_exists:
+        d.to_csv("users.csv",mode="a",index=False,header=False)
+
+    else:
+        create("users.csv")
+        d.to_csv("users.csv",mode="a",index=False,header= False)
+

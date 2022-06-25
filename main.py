@@ -10,6 +10,7 @@ from expense_info import info_date
 from Load import info_dataframe
 from Load import User
 from Load import total_expenses
+from Load import create_profile
 
 
 def main():
@@ -25,6 +26,7 @@ def main():
         user.name=name
         user.password=password
         print("\nWelcome to the Expenses tracker : ",user.name,)
+        create_profile(user.name,user.password)
     elif w=="no":
         name = input("username= ")
         name = name.lower()
@@ -53,6 +55,7 @@ def main():
             info_dataframe(day,reason,amount,profile)
         elif (x == 3):
             total_expenses(profile)
+            os.system("pause")
         else:
             print("\n\t\tGoodbye ",name)
             sys.exit("\n\t\t")
