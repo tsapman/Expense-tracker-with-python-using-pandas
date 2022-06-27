@@ -27,6 +27,7 @@ def Log():
 
 
 def main():
+    print("\t\t\t\t\t\t\t\t***** Welcome to the Expense tracker!!!*****\n")
     w=input("Are you a NEW user? yes/no---->  ")
     if w=="yes":
         print("Creating new account:\nThe password must contain at least 1 number and 1 char\n")
