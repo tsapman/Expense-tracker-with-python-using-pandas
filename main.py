@@ -1,8 +1,6 @@
 import sys
 import os
 from date import Daytoday
-import pandas as pd
-from Load import create
 from choose import choice
 from expense_info import info_reason
 from expense_info import info_amount
@@ -17,6 +15,7 @@ def Log():
     name = input("username= ")
     name = name.lower()
     password = input("password= ")
+    password=str(password)
     user = User()
     user.name = name
     user.password = password
@@ -26,14 +25,18 @@ def Log():
 
 
 def main():
-    #name=input("User= ")
-    #print("Hello ", name)
     w=input("Are you a NEW user? yes/no---->  ")
     if w=="yes":
-        name,password=Log()
-        print("Creating new account:\n")
+        print("Creating new account:\nThe password must contain at least 1 number and 1 char")
+        name, password = Log()
+        x = check_user(name, password)
+        while x==1:
+            print("the username and the password are used from another user try another combination:\n")
+
+            name, password = Log()
         create_profile(name,password)
         print("\nWelcome to the Expenses tracker : ", name)
+
     elif w=="no":
         x=0
         i=1

@@ -67,14 +67,18 @@ def create_profile(name,password):
 
 
 def check_user(name,password):
-    d=pd.read_csv("users.csv")
-    d_list=d.values.tolist()
-    #print("\nusers",d_list, "\n")
-    x1 = 0
+    file_exists = os.path.exists("users.csv")
+    if file_exists:
+        d = pd.read_csv("users.csv")
+        d_list = d.values.tolist()
+        #print("\nusers",d_list, "\n")
+        x1 = 0
 
-    if [name,password] in d_list:
-        x1 = 1
-        #print("x1=", x1)
-        return x1
-    else:
-        return x1
+        if [name, password] in d_list:
+            x1 = 1
+            #print("x1=", x1)
+            return x1
+        else:
+            return x1
+
+
