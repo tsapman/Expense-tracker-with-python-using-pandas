@@ -11,10 +11,12 @@ from Load import total_expenses
 from Load import create_profile
 from Load import check_user
 
+
+
 def Log():
     name = input("username= ")
     name = name.lower()
-    password = input("password= ")
+    password=input("password= ")
     password=str(password)
     user = User()
     user.name = name
@@ -27,13 +29,13 @@ def Log():
 def main():
     w=input("Are you a NEW user? yes/no---->  ")
     if w=="yes":
-        print("Creating new account:\nThe password must contain at least 1 number and 1 char")
+        print("Creating new account:\nThe password must contain at least 1 number and 1 char\n")
         name, password = Log()
         x = check_user(name, password)
         while x==1:
             print("the username and the password are used from another user try another combination:\n")
-
             name, password = Log()
+            x = check_user(name, password)
         create_profile(name,password)
         print("\nWelcome to the Expenses tracker : ", name)
 
